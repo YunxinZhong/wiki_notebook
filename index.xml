@@ -1,0 +1,58 @@
+<rss xmlns:atom="http://www.w3.org/2005/atom" version="2.0">
+    <channel>
+      <title>🪴 Quartz 4.0</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Recent content on 🪴 Quartz 4.0</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <atom:link href="https://quartz.jzhao.xyz/index.xml" rel="self" type="application/rss+xml"/>
+    </channel>
+    <items>
+    <title>Wiki Index</title>
+    <link>https://quartz.jzhao.xyz/</link>
+    <guid>https://quartz.jzhao.xyz/</guid>
+    <description>Wiki Index § Entities § zhejiang-university — 中国顶尖综合性研究型大学，位于杭州。 westlake-university — 位于杭州的新型研究型大学。 Concepts § multimodal-token-compression — 在保留语义的前提下减少 MLLM 输入 Token 数量的技术。 mllm-efficiency-optimization — 降低多模态模型计算成本与显存占用的策略总称。 self-attention-mechanism — Transformer 的核心组件，具有 O(N2) 计算复杂度。 Sources § tmlr-2026-首篇多模态长上下文token压缩综述-浙大-西湖大学等全面解析mllm效率瓶颈—20260505.</description>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+  </items><items>
+    <title>Project Overview</title>
+    <link>https://quartz.jzhao.xyz/overview</link>
+    <guid>https://quartz.jzhao.xyz/overview</guid>
+    <description>Overview § 本 Wiki 目前主要聚焦于人工智能前沿技术，特别是多模态大语言模型（MLLM）的效率优化领域。 核心主题 § 多模态模型效率 § 随着 AI 模型处理高分辨率图像、长视频和高采样率音频的能力增强，计算成本和显存占用成为了主要瓶颈。本 Wiki 深入探讨了如何通过技术手段解决这些问题： multimodal-token-compression：这是当前解决“Token 爆炸”问题的关键技术。我们整理了基于变换、相似度、注意力和查询的四类主流压缩方法，并分析了它们在图像、视频和音频模态下的具体应用。 mllm-efficiency-optimization：除了 Token 压缩，我们还关注架构层面的改进（如线性 Attention、Mamba）以及跨模态协同压缩等未来趋势。 基础机制 § 为了理解上述优化技术，必须掌握底层原理： self-attention-mechanism：详细记录了 Transformer 架构中自注意力机制的 O(N2) 复杂度问题，以及它如何成为长上下文处理的主要障碍。 学术与研究 § 我们追踪了该领域的最新学术进展： zhejiang-university 与 westlake-university：记录了这些机构在 TMLR 2026 上发表的首篇多模态 Token 压缩综述，这为该领域提供了统一的分类框架。 当前状态 § Wiki 已建立了关于 MLLM 效率优化的初步知识框架，涵盖了从具体算法（Token 压缩）到基础理论（自注意力）的多个层面。后续将补充更多具体的模型案例（如 InternVL, LongVU）和工程实践细节。.</description>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+  </items><items>
+    <title>MLLM 效率优化</title>
+    <link>https://quartz.jzhao.xyz/concepts/mllm-efficiency-optimization</link>
+    <guid>https://quartz.jzhao.xyz/concepts/mllm-efficiency-optimization</guid>
+    <description>MLLM 效率优化 § 概述 § MLLM 效率优化旨在降低多模态大语言模型在训练和推理过程中的计算成本、显存占用及延迟。随着模型处理长上下文（如长视频、高分辨率图像）的需求增加，效率优化已成为落地的关键瓶颈。 主要优化方向 § 1. Token 压缩 § 这是目前解决输入序列过长最直接的手段。 目标：减少进入 自注意力机制 模块的 Token 数量。 方法：包括基于变换、相似度、注意力和查询的压缩策略。 局限：可能导致细粒度信息丢失，且动态剪枝难以与 FlashAttention 兼容。 2.</description>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+  </items><items>
+    <title>多模态 Token 压缩</title>
+    <link>https://quartz.jzhao.xyz/concepts/multimodal-token-compression</link>
+    <guid>https://quartz.jzhao.xyz/concepts/multimodal-token-compression</guid>
+    <description>多模态 Token 压缩 § 定义 § 多模态 Token 压缩是指在训练或推理阶段，在保留关键语义信息的前提下，大幅减少传递给大语言模型（LLM）的 Token 数量的技术。它是解决多模态大语言模型（MLLM）效率瓶颈的核心手段。 背景与动机 § 由于 自注意力机制 的计算复杂度呈二次方增长 (O(N2))，处理高分辨率图像、长视频或高采样率音频时产生的海量 Token 会导致推理延迟和显存溢出。研究表明，多模态数据中存在大量冗余（如视频的静态背景、音频的静音），且推理中超过 50% 的 Token 获得的注意力极低，这为压缩提供了理论依据。 核心分类机制 § 根据浙江大学等机构的综述，Token 压缩主要分为以下四种机制： 1.</description>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+  </items><items>
+    <title>自注意力机制</title>
+    <link>https://quartz.jzhao.xyz/concepts/self-attention-mechanism</link>
+    <guid>https://quartz.jzhao.xyz/concepts/self-attention-mechanism</guid>
+    <description>自注意力机制 § 定义 § 自注意力机制 (Self-Attention) 是 Transformer 架构的核心组件，用于计算序列内部元素之间的相关性，从而捕捉长距离依赖关系。 计算复杂度瓶颈 § 自注意力机制的主要计算瓶颈在于其二次复杂度 (O(N2))，其中 N 是输入序列的长度（Token 数量）。 影响：当处理长视频或高分辨率图像时，Token 数量（N）激增，导致计算量和显存占用呈平方级增长。 例子：一段 90 分钟的视频可能产生 5400 万个 Token，直接计算自注意力在硬件上几乎不可行。 在多模态模型中的角色 § 在 MLLM 中，视觉编码器（如 ViT）和语言解码器（如 LLaMA）均依赖自注意力机制。 视觉端：处理图像块之间的关系。 语言端：处理文本 Token 与视觉 Token 之间的交互。 优化策略 § 为了缓解 O(N2) 的问题，通常采取以下策略： Token 压缩：在进入注意力层前减少 N（如 多模态 Token 压缩）。 FlashAttention：通过硬件感知的 IO 精确计算减少显存读写，加速注意力计算。 稀疏注意力：仅计算局部或全局关键 Token 的注意力，降低计算量。 线性注意力：使用核函数技巧将复杂度降至线性。 冲突与权衡 § 基于注意力的动态剪枝方法虽然逻辑高效，但往往破坏了数据的连续性，导致难以与 FlashAttention 等高度优化的底层库兼容，这是当前工程落地的一个主要矛盾。.</description>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+  </items><items>
+    <title>西湖大学</title>
+    <link>https://quartz.jzhao.xyz/entities/westlake-university</link>
+    <guid>https://quartz.jzhao.xyz/entities/westlake-university</guid>
+    <description>西湖大学 § 概述 § 西湖大学是一所位于中国浙江杭州的新型研究型大学，聚焦于前沿科学技术研究。 相关贡献 § 西湖大学与浙江大学等机构合作，在 TMLR 2026 发表了关于多模态长上下文 Token 压缩的首篇综述。该研究深入剖析了图像、视频、音频模态的压缩机制，指出了跨模态协同压缩和原生高效架构的未来方向。.</description>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+  </items><items>
+    <title>浙江大学</title>
+    <link>https://quartz.jzhao.xyz/entities/zhejiang-university</link>
+    <guid>https://quartz.jzhao.xyz/entities/zhejiang-university</guid>
+    <description>浙江大学 § 概述 § 浙江大学是中国顶尖的综合性研究型大学之一，位于浙江省杭州市。在人工智能领域，浙大拥有深厚的学术积累和活跃的研究团队。 相关贡献 § 在多模态大语言模型（MLLM）效率优化领域，浙江大学的研究团队与西湖大学等机构合作，发布了首篇关于多模态长上下文 Token 压缩的系统性综述（TMLR 2026），为解决 MLLM 的计算瓶颈提供了重要的理论框架和分类体系。.</description>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+  </items><items>
+    <title>TMLR 2026：首篇多模态长上下文Token压缩综述</title>
+    <link>https://quartz.jzhao.xyz/sources/tmlr-2026-首篇多模态长上下文token压缩综述-浙大-西湖大学等全面解析mllm效率瓶颈--20260505</link>
+    <guid>https://quartz.jzhao.xyz/sources/tmlr-2026-首篇多模态长上下文token压缩综述-浙大-西湖大学等全面解析mllm效率瓶颈--20260505</guid>
+    <description>TMLR 2026：首篇多模态长上下文Token压缩综述 § 概述 § 本文是浙江大学与西湖大学等机构联合发表的首篇关于多模态大语言模型（MLLM）长上下文 Token 压缩的系统性综述，已被 TMLR 2026 接收。文章深入解析了 MLLM 在处理高分辨率图像、长视频和音频时面临的效率瓶颈，并提出了统一的分类体系。 核心问题 § 随着 GPT-4o 等模型的发展，MLLM 处理长上下文的能力增强，但也带来了“Token 爆炸”问题： 数量激增：一段 90 分钟的视频可能产生高达 5400 万个 Token，远超现有上下文窗口限制。 计算成本：自注意力机制 的二次复杂度 (O(N2)) 导致推理成本随序列长度飙升。 数据冗余：视觉和听觉数据中存在大量冗余，超过 50% 的 Token 在推理中获得的注意力极低。 主要贡献：统一分类体系 § 综述首次提出了系统的分类法，将压缩技术按模态和机制进行划分。 1.</description>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+  </items>
+  </rss>
